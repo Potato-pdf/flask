@@ -1,8 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask
+from .routes.contacts import contacts_bp
 
 app=Flask(__name__)
 
-@app.route("/")
-def index():
-    return render_template("index.html")
-
+app.register_blueprint(contacts_bp)
